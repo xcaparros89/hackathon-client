@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import postservice from '../lib/post-service'
+import "./Navbar.css";
 
 
 export class Searchbar extends Component {
@@ -38,19 +38,19 @@ export class Searchbar extends Component {
     render() {
         
         return (
-            <div>
-            <form onSubmit={this.handleFormSubmit}>
+            <div className="searchbar">
+            
         <label>Spy our web:</label>
         <input 
           type="text" 
           className="input search-bar" 
           name="search" 
-          placeholder="Search" 
+          
           value={this.state.search} 
           onChange={this.handleChange} 
         />
 
-        </form>
+      
                 
             </div>
         )

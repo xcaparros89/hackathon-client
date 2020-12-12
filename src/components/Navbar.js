@@ -42,7 +42,9 @@ class Navbar extends Component {
               <Link to={"/author"}>
                 <button>Author</button>
               </Link>
+              
           </div>
+          
       )}
       {!isLoggedin && ( 
           <div>
@@ -61,9 +63,10 @@ class Navbar extends Component {
         <Link to={"/author"}>
           <button>Author</button>
         </Link>
+       
         </div>
     )}
-    <SearchBar filterPosts={this.props.filterPosts} posts={this.state.posts}/>
+     <SearchBar filterPosts={this.props.filterPosts} posts={this.state.posts}/>
     </div>
     );
   }
