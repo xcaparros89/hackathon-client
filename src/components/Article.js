@@ -28,8 +28,8 @@ export class Article extends Component {
         })
     } 
 
-    componentDidMount(){
-        this.getThePost()
+    componentDidMount= async() =>{
+        await this.getThePost()
     }
 
     handleChange(e){
