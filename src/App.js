@@ -19,7 +19,7 @@ class App extends Component {
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/login' component={Login} />
             <PrivateRoute exact path='/private' component={Private} />
-            <Route exact path='/article/:id' component={Article}/>
+            <PrivateRoute exact path='/article/:id' component={Article}/>
             <Route exact path='/author' component={Author}/>
           </Switch>
       </AuthProvider>

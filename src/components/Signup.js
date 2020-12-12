@@ -50,7 +50,7 @@ class Signup extends Component {
                             <p>{this.props.errorMessage}</p>
                             {this.state.isEmpty && <p>Write a username and password!</p>}
                             {this.state.isDifferent && <p>The passwords do not match!</p>}
-                            <input type='submit' value='' />
+                            <input type='submit' value='Sign up' />
                             <p style={{marginBottom:"0"}}>Already have an account? <Link to={"/login"} > Login</Link></p> 
                         </form>
                     </div>

@@ -38,7 +38,7 @@ class Login extends Component {
                         </div>
                         <p>{this.props.errorMessage}</p>
                         {this.state.isEmpty && <p className='error-message'>Write a username and password!</p>}
-                        <input type='submit' value='' />
+                        <input type='submit' value='Log in' />
                         <p>Don't you have an account?</p>
                         <p><Link to={"/signup"}>Register</Link></p>
                     </form>
