@@ -1,10 +1,18 @@
+.main{
+   margin: 50px;
+}
+
 .article{
-    margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
 }
 .words{
     width: 600px;
+}
+
+.form_part{
+    display: flex;
+    flex-direction: column;
 }
 
 .theButton{
