@@ -1,10 +1,54 @@
+
+.title-flex{
+    display:flex;
+    justify-content:center;
+}
+
 .articles-flex{
     display:flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
 }
 
 .article-box{
-    border: 1px solid black;
+    border: 3px solid black;
     width: 20%;
+    height: 100px;
     text-align: center;
+}
+
+.title-banderin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-article{
+
+}
+
+.title{
+    text-align: center;
+}
+
+body{
+    background: url(bg.png);
+}
+
+.banderin{
+    width:50%
+}
+
+.main{
+    margin-top: 150px;
+}
+
+.red-background-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:red;
+    margin:10px;
+    height:50px;
 }
