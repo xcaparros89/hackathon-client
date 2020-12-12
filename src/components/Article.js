@@ -26,13 +26,12 @@ export class Article extends Component {
             id: thePost._id,
             date: new Date()
         })
-
-
-        console.log(this.state.post)
     } 
+
     componentDidMount(){
         this.getThePost()
     }
+    
     handleChange(e){
         const { name, value } = e.target;
         this.setState({ [name]: value });

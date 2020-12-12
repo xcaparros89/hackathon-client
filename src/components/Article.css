@@ -1,10 +1,11 @@
 .main{
-   margin: 100px 20px 0 20px;
+   margin: 200px 20px 0 20px;
 }
 
 .article{
     display: flex;
     justify-content: space-evenly;
+    margin: 300px 20px 0 20px;
 }
 .words{
     width: 800px;
