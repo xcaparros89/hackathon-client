@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
 import postservice from '../lib/post-service'
+import { Link } from 'react-router-dom'
 
 export class Home extends Component {
     state = {
@@ -24,7 +25,7 @@ export class Home extends Component {
             <div>
                 <Navbar />
                 {posts.length !== 0 ? posts.map((post)=>{
-                    return <h1>{post.title}</h1>
+                    return <h1><Link to={`/article/${post._id}`}>{post.title}</Link></h1>
                 }): null}
             </div>
         )
