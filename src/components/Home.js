@@ -41,9 +41,6 @@ export class Home extends Component {
          return (
             <div>
                 <Navbar filterPosts={this.filterPosts} />
-                {filteredPosts.length !== 0 ? filteredPosts.map((post)=>{
-                    return <h1><Link to={`/article/${post._id}`}>{post.title}</Link></h1>
-                }): null}
                 <div className='main'>
                     <div className='title-flex'>
                         <div className='title-box'>
@@ -56,10 +53,10 @@ export class Home extends Component {
                         </div>
                     </div>
                     <div className='articles-flex'>
-                        {this.state.posts.map(post=>
+                        {this.state.filteredPosts.map(post=>
                             (<div className='article-box'>
-                                <Link to={`/article/${post._id}`} id={post.id}>
-                                    <p className='title-article'>{post.title}</p>
+                                <Link to={`/article/${post._id}`} id={post.id} className='title-article'>
+                                    {post.title}
                                 </Link>
                             </div>)
                         )}
@@ -67,6 +64,9 @@ export class Home extends Component {
                     <div>
                         <div className='red-background-title' >
                             <p>HISTORIAS REALES</p>
+                        </div>
+                        <div className='flex-historias'>
+                            <img src='./images/historias-reales.png' alt='' />
                         </div>
                     </div>
                 </div>
