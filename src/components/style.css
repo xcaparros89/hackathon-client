@@ -11,7 +11,11 @@ body{
 }
 
 h1{
+<<<<<<< HEAD
     font-size: 60px;
+=======
+    font-size: 50px;
+>>>>>>> e7c4a70e2db7972c29372c3b58ca10eb45cd7a8f
 }
 .title-flex{
     display:flex;

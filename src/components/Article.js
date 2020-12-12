@@ -33,15 +33,19 @@ export class Article extends Component {
             id: thePost._id,
             date: new Date()
         })
-
-
-        console.log(this.state.post)
     } 
+<<<<<<< HEAD
     componentDidMount(){
         this.props.me();
         console.log(this.props.user, 'this.props.user')
         this.getThePost()
+=======
+
+    componentDidMount= async() =>{
+        await this.getThePost()
+>>>>>>> e7c4a70e2db7972c29372c3b58ca10eb45cd7a8f
     }
+
     handleChange(e){
         const { name, value } = e.target;
         this.setState({ [name]: value });
