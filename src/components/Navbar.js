@@ -31,7 +31,7 @@ class Navbar extends Component {
         {isLoggedin && ( 
           <div>
             <Link to={"/"}>
-                <button><img className="logo" src="./images/star.png" alt="peine"/></button>
+                <button><img className="logo" src="/images/star.png" alt="peine"/></button>
               </Link>
               <Link to={"/"}>
                 <button>Home</button>

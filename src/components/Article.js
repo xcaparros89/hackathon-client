@@ -20,9 +20,15 @@ export class Article extends Component {
         const {params} = this.props.match
         const thePost = await postservice.getPost(params.id)
         console.log(thePost)
+        let newCreator
+        if(this.props.user){
+            newCreator= this.props.user.username
+        }else{
+            newCreator = '';
+        }
         this.setState({
             post: thePost,
-            creator: this.props.user.username,
+            creator: newCreator,
             id: thePost._id,
             date: new Date()
         })
