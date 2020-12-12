@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
+import { Link } from "react-router-dom";
 import postservice from '../lib/post-service'
+import './style.css'
 
 export class Home extends Component {
     state = {
@@ -10,7 +12,6 @@ export class Home extends Component {
 
     getThePosts = async() => {
         const thePosts = await postservice.getAll()
-        console.log(thePosts)
         this.setState({
             posts: thePosts,
             filteredPosts:thePosts
