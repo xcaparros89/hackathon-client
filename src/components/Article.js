@@ -26,12 +26,13 @@ export class Article extends Component {
             id: thePost._id,
             date: new Date()
         })
+        window.location.reload();
     } 
 
     componentDidMount(){
         this.getThePost()
     }
-    
+
     handleChange(e){
         const { name, value } = e.target;
         this.setState({ [name]: value });
