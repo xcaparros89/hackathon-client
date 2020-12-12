@@ -26,7 +26,6 @@ export class Article extends Component {
             id: thePost._id,
             date: new Date()
         })
-        window.location.reload();
     } 
 
     componentDidMount(){
