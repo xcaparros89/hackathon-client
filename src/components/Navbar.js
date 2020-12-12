@@ -1,14 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+import "./Navbar.css";
+
+
 
 class Navbar extends Component {
   render() {
     const {logout, isLoggedin } = this.props;
     return (
-        <div>
+        <div className="navbar">
         {isLoggedin && ( 
           <div>
+          <Link to={"/"}>
+                <button><img src="..//../public/pngegg.png" alt=""/></button>
+              </Link>
               <Link to={"/"}>
                 <button>Home</button>
               </Link>

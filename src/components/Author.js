@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import Navbar from './Navbar'
 
 export class Author extends Component {
     render() {
         return (
             <div>
+            <Navbar />
                 <h1>Freudorovich</h1>
                 <img src="https://pymstatic.com/8870/conversions/lev-vygotsky-biografia-wide.jpg" alt=""/>
                 <h3>Lorem ipsum dolor sit amet consectetur adipiscing elit, leo at velit ridiculus dis lacinia molestie enim, odio natoque pulvinar arcu potenti ultrices. Ac dis at cras sociis nisi habitant eu morbi, venenatis consequat nulla senectus risus lacus quisque aliquam, in arcu cursus tempor eros lectus sem. Tortor suspendisse nam sodales vitae leo proin nisi dapibus cras, orci interdum sem eget enim arcu viverra. Pulvinar viverra ultricies mi commodo fermentum, neque ultrices vehicula netus, eu cum fusce ridiculus.<br></br>
