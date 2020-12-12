@@ -41,9 +41,7 @@ export class Home extends Component {
          return (
             <div>
                 <Navbar filterPosts={this.filterPosts} />
-                {filteredPosts.length !== 0 ? filteredPosts.map((post)=>{
-                    return <h1>{post.title}</h1>
-                }): null}
+                
                 <div className='main'>
                     <div className='title-flex'>
                         <div className='title-box'>
@@ -56,7 +54,7 @@ export class Home extends Component {
                         </div>
                     </div>
                     <div className='articles-flex'>
-                        {this.state.posts.map(post=>
+                        {this.state.filteredPosts.map(post=>
                             (<div className='article-box'>
                                 <Link to={`/article/${post._id}`} id={post.id}>
                                     <p className='title-article'>{post.title}</p>
