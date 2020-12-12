@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+import './Footer.css'
 
 export class Footer extends Component {
     render() {
         return (
-            <div>
+            <div className='red-background'>
+              <button><img src="..//../public/pngegg.png" alt=""/></button>
             <Link to={"/"}>
             <button>The networks</button>
             </Link>

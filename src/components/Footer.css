@@ -1,9 +1,10 @@
-.navbar{
-    background-color:red;
-    position: fixed;
-    top:0;
-    width: 100%;
-}
+.red-background{
+        background-color:red;
+        position: fixed;
+        bottom:0;
+        width: 100%;
+    }
+    
 
 button{
     font-family:'Buran USSR';
