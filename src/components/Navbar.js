@@ -15,18 +15,24 @@ class Navbar extends Component {
               <Link to={"/"}>
                 <button onClick={logout}>Logout</button>
               </Link>
+              <Link to={"/author"}>
+                <button>Author</button>
+              </Link>
           </div>
       )}
       {!isLoggedin && ( 
           <div>
         <Link to={"/"}>
-        <button>Home</button>
+          <button>Home</button>
         </Link>
         <Link to={'/login'}>
-        <button>Login</button>
+          <button>Login</button>
         </Link>
         <Link to={"/signup"}>
-        <button>Signup</button>
+          <button>Signup</button>
+        </Link>
+        <Link to={"/author"}>
+          <button>Author</button>
         </Link>
         </div>
     )}
