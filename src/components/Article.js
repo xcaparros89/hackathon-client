@@ -22,9 +22,10 @@ export class Article extends Component {
         console.log(thePost)
         let newCreator
         if(this.props.user){
-            newCreator= this.props.user.username
+            newCreator= this.props.user
         }else{
-            newCreator = '';
+            console.log(this.props.user, 'this.props.user')
+            newCreator = this.props.user;
         }
         this.setState({
             post: thePost,
@@ -37,6 +38,8 @@ export class Article extends Component {
         console.log(this.state.post)
     } 
     componentDidMount(){
+        this.props.me();
+        console.log(this.props.user, 'this.props.user')
         this.getThePost()
     }
     handleChange(e){
@@ -44,15 +47,18 @@ export class Article extends Component {
         this.setState({ [name]: value });
     }
 
-    handleFormSubmit= async() =>{
+    handleFormSubmit= async(e) =>{
+        e.preventDefault();
+        console.log(this.state)
         const {id, creator, body, date} = this.state
-        
+        console.log(id, creator, body, date, 'things')
         await postservice.addComment({id, creator, body, date})
         this.setState({
             creator: '',
             body:'',
             date: ''
         })
+        window.location.reload();
     }
 
     showForm(){

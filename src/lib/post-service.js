@@ -27,10 +27,10 @@ class Post {
     }
   }
 
-  addComment = async({id, creator, body, date}) => {
+  addComment = async(x) => {
+      console.log('addComment',x )
     try {
-        const thePost = await this.posts.post(`/posts/${id}/addComment`,{ creator, body, date})
-        console.log(id, 'this is the id')
+        const thePost = await this.posts.post(`/posts/${x.id}/addComment`,x)
         return thePost.data
     } catch (error) {
         console.log(error)

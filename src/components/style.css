@@ -9,6 +9,10 @@
 body{
     font-family:'Gotham';
 }
+
+h1{
+    font-size: 60px;
+}
 .title-flex{
     display:flex;
     justify-content:center;

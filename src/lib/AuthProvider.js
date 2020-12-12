@@ -10,7 +10,7 @@ const withAuth = (WrappedComponent) => {
       return (
         <Consumer>
           {/* El componente <Consumer> provee un callback que recibe el "value" con el objeto Providers */}
-          {({ login, signup, user, logout, isLoggedin, errorMessage }) => {
+          {({ login, signup, user, logout, isLoggedin, errorMessage, me}) => {
             return (
               <WrappedComponent
                 login={login}
@@ -19,6 +19,7 @@ const withAuth = (WrappedComponent) => {
                 logout={logout}
                 isLoggedin={isLoggedin}
                 errorMessage={errorMessage}
+                me={me}
                 {...this.props}
               />
             );
@@ -38,6 +39,17 @@ class AuthProvider extends React.Component {
     auth
       .me()
       .then((user) =>
+        this.setState({ isLoggedin: true, user: user, isLoading: false, errorMessage:false })
+      )
+      .catch((err) =>
+        this.setState({ isLoggedin: false, user: null, isLoading: false, errorMessage:false })
+      );
+  }
+
+  me = () =>{
+    console.log('meme')
+    auth.me()
+    .then((user) =>
         this.setState({ isLoggedin: true, user: user, isLoading: false, errorMessage:false })
       )
       .catch((err) =>
@@ -77,14 +89,14 @@ class AuthProvider extends React.Component {
   render() {
     // destructuramos isLoading, isLoggedin y user de this.state y login, logout y signup de this
     const { isLoading, isLoggedin, user, errorMessage } = this.state;
-    const { login, logout, signup } = this;
+    const { login, logout, signup, me} = this;
 
     return isLoading ? (
       // si está loading, devuelve un <div> y sino devuelve un componente <Provider> con un objeto con los valores: { isLoggedin, user, login, logout, signup}
       // el objeto pasado en la prop value estará disponible para todos los componentes <Consumer>
       <div>Loading</div>
     ) : (
-      <Provider value={{ isLoggedin, user, errorMessage, login, logout, signup }}>
+      <Provider value={{ isLoggedin, user, errorMessage, login, logout, signup, me }}>
         {this.props.children}
       </Provider>
     ); /*<Provider> "value={}" datos que estarán disponibles para todos los componentes <Consumer> */
