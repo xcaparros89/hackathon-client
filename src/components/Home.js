@@ -42,7 +42,7 @@ export class Home extends Component {
             <div>
                 <Navbar filterPosts={this.filterPosts} />
                 {filteredPosts.length !== 0 ? filteredPosts.map((post)=>{
-                    return <h1>{post.title}</h1>
+                    return <h1><Link to={`/article/${post._id}`}>{post.title}</Link></h1>
                 }): null}
                 <div className='main'>
                     <div className='title-flex'>

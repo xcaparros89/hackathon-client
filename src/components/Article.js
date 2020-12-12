@@ -23,7 +23,8 @@ export class Article extends Component {
         this.setState({
             post: thePost,
             creator: this.props.user.username,
-            id: thePost._id
+            id: thePost._id,
+            date: new Date()
         })
 
 
@@ -55,15 +56,15 @@ export class Article extends Component {
     }
     render() {
         const {post, creator, body, date} = this.state
-        return (
-            
-            <div>
+        return (         
+            <div >
             <Navbar/>
+            <div className='main'>
                 <div className='article'>
                     <div className='words'>
                         <p>{post.date}</p>
-                        <h1>{post.title}</h1>
-                        <button>Share this article</button>
+                        <h1 style={{color: 'red'}}>{post.title}</h1>
+                        <button className='button_white'> <img src="/images/simbolito-comunista.png" style={{width:20}} alt=""/> Share this article</button>
                         <br></br>
                         <h3>{post.description}</h3>
                     </div>
@@ -77,7 +78,7 @@ export class Article extends Component {
                     <form onSubmit={this.handleFormSubmit}>
                     <div className="form_part">
                   <label>Your comment:</label>
-                  <input
+                  <textarea style={{width: 500, height: 200}}
                     type="text"
                     name="body"
                     value={body}
@@ -90,10 +91,19 @@ export class Article extends Component {
                         <button className='button_white' onClick={() => this.showForm()}><img style={{width: 20}} src='/image.png' alt="" /> New message</button>
                         </div>}
                 <div>
-                    <h6>Community comments: </h6>
+                <div>
+                <img style={{width: 20}} src='/image.png' alt="" /> <h3 style={{color: 'red'}}>Community comments </h3> <p style={{backgroundColor: 'black', width: '100%'}}>Hello there!</p>
+                </div>
+                
                     {post.comments && post.comments.length !== 0 ? post.comments.map((comment) => {
-                        return <div>{console.log(comment)}
-                        <p>{comment.creator}: {comment.body}</p></div>
+                        return <div className="comment">
+                        <p>{comment.date}</p>
+                        <h3>{comment.creator} </h3>
+                        <p>{comment.body}</p>
+                        <div className="theButton">
+                        <button className="button_red">Reply</button>
+                        </div>
+                        </div>
                     }) : null}
 
                 </div>
@@ -102,7 +112,7 @@ export class Article extends Component {
             <Link to="/">
               Back to Home
             </Link> 
-                 
+            </div> 
             </div>
         )
     }

@@ -1,10 +1,18 @@
+.main{
+   margin: 100px 20px 0 20px;
+}
+
 .article{
-    margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
 }
 .words{
-    width: 600px;
+    width: 800px;
+}
+
+.form_part{
+    display: flex;
+    flex-direction: column;
 }
 
 .theButton{
@@ -16,9 +24,32 @@
 
 .button_white{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     color: black;
+    background-color: white;
     height: 20px;
     margin: 20px;
     border: 1px black solid;
+}
+
+.button_red{
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: red;
+    height: 5px;
+    width:5px;
+    margin: 20px;
+    border: 1px black solid;
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 5px white solid;
+    padding: 20px;
+    margin: 20px;
+    width: 500px;
+    height: 200px;
 }
